@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { createWriteStream } from 'fs';
 @Component({
   selector: 'candidates',
   templateUrl: './candidates.component.html',
@@ -24,9 +24,18 @@ export class CandidatesComponent implements OnInit {
   }
 
   // Code the addToCrew function here:
-
+  //Using the includes method to check if candidate is/not part of the crew 29.6.3.2
+  //if candidate is already in  crew array, 
+addToCrew(crewMember: object){
+  if (!this.crew.includes(crewMember)){
+    this.crew.push(crewMember);
+  } 
+  return false;
+  }
+  
+}
 
   // BONUS: Code the changeMissionName function here:
 
 
-}
+
